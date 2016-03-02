@@ -11,7 +11,9 @@ export default class Content extends React.Component{
 
     render(){
         return(
-            <Text text={this.props.content} />
+            <Text style={this.props.style} text={this.props.content}>
+                {this.props.children}
+            </Text>
         );
     }
 }

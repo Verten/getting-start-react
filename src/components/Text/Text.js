@@ -11,6 +11,10 @@ export default class Text extends React.Component {
         }
     }
     render() {
-        return <h1>Hello {this.props.text} !</h1>;
+        return(
+            <div className={this.props.style}>Hello {this.props.text} !
+                <div className={this.props.style + '_content'}>{this.props.children}</div>
+            </div>
+        );
     }
 }

@@ -1,0 +1,14 @@
+body {
+  font-size: 1.5em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
+.main_page {
+  width: 100%; }
+  .main_page ul {
+    list-style-type: none;
+    text-align: right; }
+    .main_page ul li {
+      display: inline-block;
+      margin: 0px 15px; }
+
+/*# sourceMappingURL=App.css.map */
