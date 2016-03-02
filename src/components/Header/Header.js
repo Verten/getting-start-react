@@ -1,7 +1,7 @@
 import React from 'react';
 import Text from '../Text/Text.js';
 
-export default class Content extends React.Component{
+export default class Header extends React.Component{
     constructor() {
         super();
         this.state = {
@@ -10,7 +10,9 @@ export default class Content extends React.Component{
     }
     render() {
         return (
-            <Text text={this.props.content}/>
+            <Text style={this.props.style} text={this.props.content}>
+                {this.props.children}
+            </Text>
         )
     }
 }
