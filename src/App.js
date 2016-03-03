@@ -6,7 +6,7 @@ import { Router, Route, Link,hashHistory } from 'react-router';
 import App from './components/App/App.js';
 import Index from './components/Page/Index/Index.js';
 import About from './components/Page/About/About.js';
-//import Comment from './components/Page/Comment/Comment.js';
+import Comment from './components/Page/Comment/Comment.js';
 import NotFound from './components/Page/NotFound/NotFound.js';
 
 //With JSX
@@ -39,13 +39,13 @@ const router_Config = [
                 component: About
             },
             {
+                path: 'comment',
+                component: Comment
+            },
+            {   //should always be last
                 path: '*',
                 component: NotFound,
             }
-            /*{
-                path: 'comment',
-                component: Comment
-            }*/
         ]
     },
     {

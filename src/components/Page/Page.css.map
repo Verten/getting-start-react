@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,KAAK;EACH,KAAK,EAAE,IAAI",
+"mappings": "AAAA,KAAK;EACH,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,OAAO;EACnB,OAAO,EAAC,GAAG",
 "sources": ["Page.scss"],
 "names": [],
 "file": "Page.css"

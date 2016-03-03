@@ -18,6 +18,7 @@ export default class App extends React.Component{
                 <ul>
                     <li><Link to="/index">Index</Link></li>
                     <li><Link to="/about">About</Link></li>
+                    <li><Link to="/comment">Comment</Link></li>
                 </ul>
                 {this.props.children}
             </div>
