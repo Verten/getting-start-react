@@ -34,6 +34,7 @@
     "webpack": "^1.12.14"
   },
   "dependencies": {
+    "alt": "^0.18.2",
     "babel-preset-react": "^6.5.0",
     "eslint": "^2.2.0",
     "extract-text-webpack-plugin": "^1.0.1",

@@ -19,39 +19,35 @@ export default class Comment extends React.Component {
 
     }
 
-    static defaultProps = {
-
-    }
+    static defaultProps = {}
 
     constructor() {
         super();
-        this.state = {
-
-        }
+        this.state = {}
     }
 
-    componentDidMount(){
+    componentDidMount() {
 
     }
 
     // need to using this.handle_Comment.bind(this), or the this.refs will do not work.
-    handle_Comment(){
+    handle_Comment() {
         let exists_comment = this.refs.comment_list.state.data;
         let comment_value = this.refs.comment_value.state.input_value;
-        if("" != comment_value && comment_value != undefined){
+        if ("" != comment_value && comment_value != undefined) {
             this.refs.comment_list.updateData(comment_value);
             this.refs.comment_value.reset();
         }
     }
 
     render() {
-        return(
+        return (
             <div className="page">
                 <Header style="commentPage_header" content="Comment Header"/>
-                <Content style="commentPage_content" content="" >
-                    <List ref="comment_list" />
+                <Content style="commentPage_content" content="">
+                    <List ref="comment_list"/>
                     <Input ref="comment_value" value="Input your comment"/>
-                    <Button clickFunction={this.handle_Comment.bind(this)} style="comment_button" content="Submit" />
+                    <Button clickFunction={this.handle_Comment.bind(this)} style="comment_button" content="Submit"/>
                 </Content>
             </div>
         );
