@@ -23,10 +23,7 @@ export default class List extends React.Component {
         super();
         this.state = {
             //default
-            data:[
-                {data:'comment1'},
-                {data:'comment2'}
-            ]
+            data:[]
         }
     }
 
@@ -35,17 +32,17 @@ export default class List extends React.Component {
     }
     //always using setState to update the component
     updateData(data){
-        let exists_comment = this.state.data;
+        let exists_comment = this.props.data;
         exists_comment.push({
             data: data
         });
         this.setState({
-            data: exists_comment
+            //call setState to update component
         });
     }
     renderComment(){
         console.log('init comment');
-        let exists_comment = this.state.data;
+        let exists_comment = this.props.data;
         let comment_items = [];
         for (let index in exists_comment){
             comment_items.push(

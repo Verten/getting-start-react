@@ -9,6 +9,8 @@ import About from './components/Page/About/About.js';
 import Comment from './components/Page/Comment/Comment.js';
 import NotFound from './components/Page/NotFound/NotFound.js';
 
+import CommentAction from './Action/CommentAction';
+
 //With JSX
 //React.render(
 //
@@ -54,8 +56,10 @@ const router_Config = [
     }
 ];
 
-React.render(
-    <Router routes={router_Config} history={hashHistory} />
-    ,
-    document.getElementById('app')
-);
+CommentAction.loadData('./Asset/data/comment.json').then(() => {
+    React.render(
+        <Router routes={router_Config} history={hashHistory} />
+        ,
+        document.getElementById('app')
+    );
+});

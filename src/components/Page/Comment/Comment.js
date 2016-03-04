@@ -8,7 +8,10 @@ import Content from '../../Content/Content.js';
 import Button from '../../Button/Button';
 import Input from '../../Input/Input';
 import List from '../../List/List';
+import CommentStore from '../../../Store/CommentStore';
+import connectToStores from 'alt-utils/lib/connectToStores';
 
+@connectToStores
 export default class Comment extends React.Component {
     static propTypes = {
         //React.PropTypes.string.isRequired,
@@ -26,13 +29,26 @@ export default class Comment extends React.Component {
         this.state = {}
     }
 
+    static getStores() {
+        // this will handle the listening/unlistening for you
+        return [CommentStore];
+    }
+
+    static getPropsFromStores() {
+        // this is the data that gets passed down as props
+        // each key in the object returned by this function is added to the `this.props`
+        let stored_comments = CommentStore.getState();
+        return {
+            comments: stored_comments
+        }
+    }
+
     componentDidMount() {
 
     }
 
     // need to using this.handle_Comment.bind(this), or the this.refs will do not work.
     handle_Comment() {
-        let exists_comment = this.refs.comment_list.state.data;
         let comment_value = this.refs.comment_value.state.input_value;
         if ("" != comment_value && comment_value != undefined) {
             this.refs.comment_list.updateData(comment_value);
@@ -45,7 +61,7 @@ export default class Comment extends React.Component {
             <div className="page">
                 <Header style="commentPage_header" content="Comment Header"/>
                 <Content style="commentPage_content" content="">
-                    <List ref="comment_list"/>
+                    <List ref="comment_list" data={this.props.comments}/>
                     <Input ref="comment_value" value="Input your comment"/>
                     <Button clickFunction={this.handle_Comment.bind(this)} style="comment_button" content="Submit"/>
                 </Content>
