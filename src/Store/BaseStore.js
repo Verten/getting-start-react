@@ -5,12 +5,14 @@ export default class BaseStore {
 
     // Called when store date is received
     onDataReceived(object) {
-        if (object.length > 0) {
-            // The object is in fact an array
-            this.setState(object);
+        // NOTE: object CAN NOT be an Array - must be object
+        if (object.key && object.response) {
+            // Object with key namespace
+            this.state[object.key] = object.response;
+            this.emitChange();
         } else {
             // Regular object
-            this.state[object.key] = object.response;
+            this.setState(object);
         }
     }
 

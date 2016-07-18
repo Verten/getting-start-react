@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var node_modules = path.resolve(__dirname, 'node_modules');
 var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');
+var pathToReactDOM = path.resolve(node_modules, 'react-dom/dist/react-dom.min.js');
 
 //独立打包样式文件
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -25,7 +26,8 @@ var config = {
         //自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
         extensions: ['', '.js', '.json', '.scss'],
         alias: {
-            'react': pathToReact
+            'react': pathToReact,
+            'react-dom': pathToReactDOM
         }
     },
     output: {
@@ -45,7 +47,7 @@ var config = {
                 loader:  debug? 'style!css!sass?sourceMap' : ExtractTextPlugin.extract(['css','sass'])
             }
         ],
-        noParse:[pathToReact]
+        noParse:[pathToReact,pathToReactDOM]
     }
 };
 

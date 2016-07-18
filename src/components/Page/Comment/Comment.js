@@ -37,7 +37,7 @@ export default class Comment extends React.Component {
     static getPropsFromStores() {
         // this is the data that gets passed down as props
         // each key in the object returned by this function is added to the `this.props`
-        let stored_comments = CommentStore.getState();
+        let stored_comments = CommentStore.getState().comments;
         return {
             comments: stored_comments
         }
@@ -56,6 +56,12 @@ export default class Comment extends React.Component {
         }
     }
 
+    test(){
+        //after change the store comments, we should set state to reload page.
+        CommentStore.addComment();
+        this.setState(this.state);
+    }
+
     render() {
         return (
             <div className="page">
@@ -64,6 +70,7 @@ export default class Comment extends React.Component {
                     <List ref="comment_list" data={this.props.comments}/>
                     <Input ref="comment_value" value="Input your comment"/>
                     <Button clickFunction={this.handle_Comment.bind(this)} style="comment_button" content="Submit"/>
+                    {/*<Button clickFunction={this.test.bind(this)} style="comment_button" content="test"/>*/}
                 </Content>
             </div>
         );

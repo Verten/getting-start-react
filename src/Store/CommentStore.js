@@ -8,9 +8,21 @@ import BaseStore from './BaseStore';
 class CommentStore extends BaseStore {
     constructor() {
         super();
-        this.state = {};
+        this.state = {
+            "comments":[]
+        };
         // Binds the CommentStore methods to their 'on' equivalents
         this.bindActions(CommentAction);
+    }
+
+    //we can change comments in other class
+    static addComment(){
+        this.state.comments.push(
+            {
+                "author": "hongbin2",
+                "data": "this is a nice framework"
+            }
+        );
     }
 }
 

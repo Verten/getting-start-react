@@ -1,14 +1,16 @@
-[
-  {
-    "author": "hongbin",
-    "data": "this is a nice framework"
-  },
-  {
-    "author": "hongbin1",
-    "data": "this is a nice framework"
-  },
-  {
-    "author": "hongbin2",
-    "data": "this is a nice framework"
-  }
-]
+{
+  "comments": [
+    {
+      "author": "hongbin",
+      "data": "this is a nice framework"
+    },
+    {
+      "author": "hongbin1",
+      "data": "this is a nice framework"
+    },
+    {
+      "author": "hongbin2",
+      "data": "this is a nice framework"
+    }
+  ]
+}
