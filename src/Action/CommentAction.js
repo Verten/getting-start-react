@@ -10,7 +10,8 @@ class CommentAction {
         // This is a shorthand for actions that only dispatch a single value
         this.generateActions(
             'dataReceived', //will execute 'onDataReceived' method in BaseStore
-            'dataError' //will execute 'onDataError' method in BaseStore
+            'dataError', //will execute 'onDataError' method in BaseStore
+            'addComment'
         );
     }
 

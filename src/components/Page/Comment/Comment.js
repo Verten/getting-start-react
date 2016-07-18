@@ -9,6 +9,7 @@ import Button from '../../Button/Button';
 import Input from '../../Input/Input';
 import List from '../../List/List';
 import CommentStore from '../../../Store/CommentStore';
+import CommentAction from '../../../Action/CommentAction';
 import connectToStores from 'alt-utils/lib/connectToStores';
 
 @connectToStores
@@ -58,8 +59,7 @@ export default class Comment extends React.Component {
 
     test(){
         //after change the store comments, we should set state to reload page.
-        CommentStore.addComment();
-        this.setState(this.state);
+        CommentAction.addComment();
     }
 
     render() {
@@ -70,7 +70,7 @@ export default class Comment extends React.Component {
                     <List ref="comment_list" data={this.props.comments}/>
                     <Input ref="comment_value" value="Input your comment"/>
                     <Button clickFunction={this.handle_Comment.bind(this)} style="comment_button" content="Submit"/>
-                    {/*<Button clickFunction={this.test.bind(this)} style="comment_button" content="test"/>*/}
+                    <Button clickFunction={this.test.bind(this)} style="comment_button" content="test"/>
                 </Content>
             </div>
         );

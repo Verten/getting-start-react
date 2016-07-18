@@ -16,13 +16,14 @@ class CommentStore extends BaseStore {
     }
 
     //we can change comments in other class
-    static addComment(){
+    addComment(){
         this.state.comments.push(
             {
                 "author": "hongbin2",
                 "data": "this is a nice framework"
             }
         );
+        this.setState(this.state);
     }
 }
 
